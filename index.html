@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,18 +13,30 @@
     <style> @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); </style>
 </head>
 <body>
-    <div class="firstDiv">
-        <div class="start effect">-Etch-a-Sketch-</div>
+<div id="firstDiv">
+        <button id="startButton">-Etch-a-Sketch-</button>
+        <p id="createdBy">Created By <a href="https://github.com/ragevoid">@ragevoid</a> for the curriculum in <a href="https://www.theodinproject.com">The Odin Porject</a> 2023</p>
+</div>
+<div id="playDiv">
+  <div class="optionsContainer">
+      <div class="colorButtons">
+            <div id="chooseButton" class="colorChoice"> <div class="msg"><h2>Pick Your Color</h2></div><input type="color" class="colorInput" onchange="ChooseColorButton(this.value)"></div>
+            <button id="eraserButton" class="colorChoice" onclick="ChooseColorButton('white')">Eraser</button>
+            <button id="blackButton" class="colorChoice" onclick="ChooseColorButton('black')">Black</button>
+            <button id="randomButton" class="colorChoice" onclick="ChooseColorButton('random')">Go Nuts</button>
+      </div>
+
+    <div class="sizeButtons">
+          <div class="sizeDiv  sizeChoice"><input type="range" id="size" min="16" max="64" value="16" onchange="changeSize(this.value)">
+          <p class="valuePrint">16</p></div>
+          <button class="resetButton sizeChoice" onclick="changeSize(16)">Reset Board</button>
     </div>
 
-    <main>
-        <div></div>
+  </div>
+        <div class="gridContainer"></div>
 
+</div>
 
-
-    </main>
-
-
-
+<script src="script.js"></script>
 </body>
 </html>
